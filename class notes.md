@@ -15,3 +15,6 @@ upload graphs separate from report to github in new dir
 
 #fullstack
 add more detail and sentence descriptioons for most elements
+
+#README
+add technical summary here with title cleaned up
