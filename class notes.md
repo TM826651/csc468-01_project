@@ -18,3 +18,6 @@ add more detail and sentence descriptioons for most elements
 
 #README
 add technical summary here with title cleaned up
+
+#resumes
+remove phone number and specific addresses from resumes
