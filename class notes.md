@@ -1,10 +1,10 @@
 #general  
-- [ ] Add chapter number and title X  
-- [ ] add usage of amazon api - up to a million hits on a free account  
-- [ ] Ch1 is overview, Ch2 is the technical
+- [X] Add chapter number and title X  
+- [X] add usage of amazon api - up to a million hits on a free account  
+- [X] Ch1 is overview, Ch2 is the technical
 
 #placement  
-- [ ] separate technical from general overvew for non technical. move second paragraph to technical implementation
+- [X] separate technical from general overvew for non technical. move second paragraph to technical implementation
 
 #graph  
 - [ ] make another graph  
@@ -19,4 +19,4 @@
 - [ ] add technical summary here with title cleaned up
 
 #resumes  
-- [ ] remove unneeded data
+- [X] remove unneeded data
