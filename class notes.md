@@ -9,14 +9,14 @@
 #graph  
 - [ ] make another graph  
 - [ ] needs to be more detailed  
-- [ ] make both graphs horizontal instead of vertical  
-- [ ] upload graphs separate from report to github in new dir 
+- [X] make both graphs horizontal instead of vertical  
+- [X] upload graphs separate from report to github in new dir 
 
 #fullstack  
 - [ ] add more detail and sentence descriptioons for most elements
 
 #README  
-- [ ] add technical summary here with title cleaned up
+- [X] add technical summary here with title cleaned up
 
 #resumes  
 - [X] remove unneeded data
