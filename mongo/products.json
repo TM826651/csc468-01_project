@@ -1,0 +1,5 @@
+var docs=[
+  {"product": "headphones", "price": 20, "date": "March 30, 2024"}, 
+  {"product": "macbook", "price": 1000, "date": "March 30, 2024"}, 
+  {"product": "mouses", "price": 15, "date": "March 30, 2024"}
+]
