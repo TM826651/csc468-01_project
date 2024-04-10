@@ -7,7 +7,7 @@ import time
 import pymongo
 
 # MongoDB connection string
-MONGO_URL = "mongodb://mongoadmin2:password@mongodb-service-name:27017"
+MONGO_URL = "mongodb://mongoadmin:password@mongo:27017"
 DB_NAME = "inventory"
 COLLECTION_NAME ="items"
 
