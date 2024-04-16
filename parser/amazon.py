@@ -7,7 +7,7 @@ import time
 import pymongo
 
 # MongoDB connection string
-MONGO_URL = "mongodb://mongoadmin:secret@pcvm603-15.emulab.net:27017"
+MONGO_URL = "mongodb://mongoadmin:secret@mongo:27017"
 DB_NAME = "inventory"
 COLLECTION_NAME ="items"
 
