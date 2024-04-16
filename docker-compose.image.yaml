@@ -1,7 +1,0 @@
-version: "3"
-
-services:
-  build: parser
-  image: parser:v0.1
-  deploy:
-    replicas: 3
