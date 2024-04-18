@@ -16,4 +16,4 @@ spec:
       - name: parser
         image: alexisnunez957/csc468cloud:parser
         ports:
-        containerPort: 80
+        - containerPort: 80
