@@ -82,7 +82,8 @@ def main():
     product_urls = [
         "https://www.amazon.com/Beats-Studio-Pro-Personalized-Compatibility/dp/B0C8PR4W22",
         "https://www.amazon.com/Logitech-Tenkeyless-Lightspeed-Mechanical-LIGHTSYNC/dp/B085RMD5TP",
-        "https://www.amazon.com/Lenovo-IdeaPad-Display-Celeron-Graphics/dp/B0BLW25MB7"
+        "https://www.amazon.com/Lenovo-IdeaPad-Display-Celeron-Graphics/dp/B0BLW25MB7",
+        "https://www.amazon.com/produce-aisle-mburring-Red-Raspberries/dp/B000P6G12U"
     ]
 
     try:
