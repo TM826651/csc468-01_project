@@ -36,7 +36,7 @@ def get_product_info(url):
     price = price_element.text if price_element else None
 
     # Get the current timestamp
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %I:%M:%S %p")
 
 
     return {
@@ -95,12 +95,15 @@ def main():
             for item in data:
                 collection.update_one({"url": item["url"]}, {"$set": item}, upsert=True)
 
-            print("Waiting before the next scraping...")
 
             # Generate a random delay between 2 and 6 hours
             delay_hours = random.uniform(2, 6)
             delay_seconds = delay_hours * 3600 # Convert hours to seconds
+            print(f"Waiting for {delay_seconds} seconds before the next scraping...")
             time.sleep(delay_seconds)
+
+            # Clear the visited_urls set to allow revisiting URLs
+            visited_urls.clear()
 
             iteration += 1
 
