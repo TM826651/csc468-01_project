@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atlas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: atlas
+  template:
+    metadata:
+      labels:
+        app: atlas
+    spec:
+      containers:
+      - name: atlas-container
+        image: mongodb/atlas:latest
+        ports:
+          - name: http-port
+            containerPort: 27017
