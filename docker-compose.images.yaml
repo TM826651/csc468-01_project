@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  atlas:
+    image: atlas
+    ports:
+      - "27017:27017"
