@@ -1,15 +1,20 @@
-import datetime
+  GNU nano 6.2                                                                                                                                                                                                                                                                                                                                                                                                                                                                    amazon.py                                                                                                                                                                                                                                                                                                                                                                                                                                                                             import datetime
 import random
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
 import pymongo
+import pytz
+
+# Specify timezone
+local_tz = pytz.timezone('America/New_York')
+
 
 # MongoDB connection string
-MONGO_URL = "mongodb://mongoadmin:secret@mongo:27017"
-DB_NAME = "inventory"
-COLLECTION_NAME ="items"
+MONGO_URL = "mongodb+srv://mongoadmin:secretpass@cluster0.o3tufac.mongodb.net/?retryWrites=true&w=majority"
+DB_NAME = "products"
+COLLECTION_NAME ="inventory"
 
 custom_headers = {
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15',
@@ -36,7 +41,7 @@ def get_product_info(url):
     price = price_element.text if price_element else None
 
     # Get the current timestamp
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %I:%M:%S %p")
+    timestamp = datetime.datetime.now(local_tz).strftime("%Y-%m-%d %I:%M:%S %p")
 
 
     return {
@@ -82,8 +87,7 @@ def main():
     product_urls = [
         "https://www.amazon.com/Beats-Studio-Pro-Personalized-Compatibility/dp/B0C8PR4W22",
         "https://www.amazon.com/Logitech-Tenkeyless-Lightspeed-Mechanical-LIGHTSYNC/dp/B085RMD5TP",
-        "https://www.amazon.com/Lenovo-IdeaPad-Display-Celeron-Graphics/dp/B0BLW25MB7",
-        "https://www.amazon.com/produce-aisle-mburring-Red-Raspberries/dp/B000P6G12U"
+        "https://www.amazon.com/Lenovo-IdeaPad-Display-Celeron-Graphics/dp/B0BLW25MB7"
     ]
 
     try:
@@ -94,7 +98,15 @@ def main():
             df.to_json("products.json") # Inserting data into a separate json file
 
             for item in data:
-                collection.update_one({"url": item["url"]}, {"$set": item}, upsert=True)
+                formatted_data = {
+                    "product": item["name"],
+                    "prices": [{
+                         "price": item["price"],
+                         "date": item["timestamp"]
+                    }]
+                }
+
+                collection.update_one({"product": item["name"]}, {"$push": {"prices": {"$each": formatted_data["prices"]}}}, upsert=True)
 
 
             # Generate a random delay between 2 and 6 hours
