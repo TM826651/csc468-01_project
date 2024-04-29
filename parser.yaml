@@ -17,3 +17,6 @@ spec:
         image: alexisnunez957/csc468cloud:parser
         ports:
         - containerPort: 80
+        env:
+        - name: TimeZone
+          value: "America/New_York"
