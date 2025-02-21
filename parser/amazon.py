@@ -11,7 +11,7 @@ local_tz = pytz.timezone('America/New_York')
 
 
 # MongoDB connection string
-MONGO_URL = "mongodb+srv://mongoadmin:secretpass@cluster0.o3tufac.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URL = "mongodb+srv://mongoadmin:your_password@cluster0.clh6g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DB_NAME = "products"
 COLLECTION_NAME ="inventory"
 
